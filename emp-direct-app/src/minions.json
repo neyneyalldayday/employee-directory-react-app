@@ -6,5 +6,21 @@
         "position": "otolaryngologist",       
         "department": "ears depot",
         "email": "eardad@wuka.com"
+    },
+    {
+        "id": 1,
+        "name": "Bob Sagat",
+        "pay": 175000,
+        "position": "comedian",       
+        "department": "jokes",
+        "email": "famlife@abc.com"
+    },
+    {
+        "id": 1,
+        "name": "Bob Burnquist",
+        "pay": 175000,
+        "position": "Mega Ramp",       
+        "department": "sk8 or die",
+        "email": "eardad@wuka.com"
     }
 ]

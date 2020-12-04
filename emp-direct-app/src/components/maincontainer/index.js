@@ -20,6 +20,9 @@ class MainContainer extends Component {
         }
         this.setState({results: singleMinion})
     };
+    handleViewAll = event => {
+        this.setState({results: Minion})
+    }
     
     // componentDidMount() {
     //     this.handleViewAll()
