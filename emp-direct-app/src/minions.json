@@ -2,9 +2,9 @@
     {
         "id": 1,
         "name": "Bob Dole",
-        "position": "otolaryngologist",
         "pay": 175000,
-        "dpeartment": "ears depot",
+        "position": "otolaryngologist",       
+        "department": "ears depot",
         "email": "eardad@wuka.com"
-    },
+    }
 ]
