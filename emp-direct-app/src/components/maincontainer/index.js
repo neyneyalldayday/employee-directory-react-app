@@ -9,7 +9,8 @@ class MainContainer extends Component {
     state ={
         results: []
     };
-    handleSingleEmployee = event => {
+   
+    handleSingleMinion = event => {
         event.preventDefault();
         const value = event.target.innerHTML;
         let singleMinion = [];
@@ -20,13 +21,16 @@ class MainContainer extends Component {
         }
         this.setState({results: singleMinion})
     };
+    
     handleViewAll = event => {
         this.setState({results: Minion})
     }
     
-    // componentDidMount() {
-    //     this.handleViewAll()
-    // }
+    componentDidMount() {
+        this.handleViewAll()
+    }
+    
+    
     render(){
         return (
             <div className="App">
@@ -36,9 +40,9 @@ class MainContainer extends Component {
                 <NameCard>
                 <div className="card-header" style={{textAlign: "center"}}>Click for View</div>
                 <div className="card-body" style={{textAlign: "center"}}>
-                {Minion.map(emp => ( <Name empName={emp.name} class="btn btn-secondary" handleSingleEmployee={this.handleSingleEmployee}/>))}
-                <Name empName="View All" class="btn btn-primary" />
-                <Name empName="Sort by Pay" class="btn btn-primary" />
+                {Minion.map(emp => ( <Name empName={emp.name} class="btn btn-secondary" handleSingleMinion={this.handleSingleMinion}/>))}
+                <Name empName="View All" class="btn btn-primary" handleSingleMinion={this.handleViewAll} />
+                <Name empName="Sort by Pay" class="btn btn-primary" handleSingleMinion={this} />
                 <Name empName="View Dev Team" class="btn btn-primary"/>
                 </div>
                 </NameCard>
@@ -46,11 +50,7 @@ class MainContainer extends Component {
 
 
             </div>
-
-            </main>    
-           
-                
-             
+            </main>             
             </div>
           );
 
