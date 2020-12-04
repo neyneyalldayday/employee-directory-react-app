@@ -9,6 +9,7 @@ class MainContainer extends Component {
     state ={
         results: []
     };
+    
    
     handleSingleMinion = event => {
         event.preventDefault();
@@ -20,15 +21,37 @@ class MainContainer extends Component {
             }
         }
         this.setState({results: singleMinion})
-    };
-    
+    };    
     handleViewAll = event => {
+        
         this.setState({results: Minion})
-    }
-    
+    };
+    handleSortPay = event => {
+        event.preventDefault();
+        let minSort = []
+        for(var i = 0; i<Minion.length; i++){
+            minSort.push(Minion[i])
+        }
+        let paySort = minSort.sort((a, b) => {
+            return b.pay - a.pay;
+        });
+        this.setState({results: paySort})
+    };
+    handleCoolGuy = event => {
+        event.preventDefault();
+        let CoolGuy = [];
+        for(var i = 0; i<Minion.length; i++){
+            if(Minion[i].department === "Coolest Dood Alive"){
+                CoolGuy.push(Minion[i])
+            };
+        }
+        this.setState({results: CoolGuy})
+    };
     componentDidMount() {
         this.handleViewAll()
     }
+
+   
     
     
     render(){
@@ -38,12 +61,12 @@ class MainContainer extends Component {
             <Header />
             <div className="row">
                 <NameCard>
-                <div className="card-header" style={{textAlign: "center"}}>Click for View</div>
+                <div className="card-header" style={{textAlign: "center"}}>Click for Info</div>
                 <div className="card-body" style={{textAlign: "center"}}>
                 {Minion.map(emp => ( <Name empName={emp.name} class="btn btn-secondary" handleSingleMinion={this.handleSingleMinion}/>))}
                 <Name empName="View All" class="btn btn-primary" handleSingleMinion={this.handleViewAll} />
-                <Name empName="Sort by Pay" class="btn btn-primary" handleSingleMinion={this} />
-                <Name empName="View Dev Team" class="btn btn-primary"/>
+                <Name empName="Sort by Pay" class="btn btn-primary" handleSingleMinion={this.handleSortPay} />
+                <Name empName="View Coolest Guy" class="btn btn-primary" handleSingleMinion={this.handleCoolGuy}/>
                 </div>
                 </NameCard>
                 <EmployeeCard results={this.state.results} />
