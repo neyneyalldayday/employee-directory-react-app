@@ -14,7 +14,7 @@ class MainContainer extends Component {
     render(){
         return (
             <div className="App">
-            <main className="container" style={{paddingTop: "1rem"}}>
+            <main className="container-fluid" style={{paddingTop: "1rem"}}>
             <Header />
             <div className="row">
                 <NameCard>
