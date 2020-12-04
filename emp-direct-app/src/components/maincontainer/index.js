@@ -1,12 +1,27 @@
 import React, { Component } from "react";
+import Header from "./Header";
 
 class MainContainer extends Component {
+    // state ={
+    //     results: []
+    // };
+    // componentDidMount() {
+    //     this.andleViewAll()
+    // }
     render(){
         return (
             <div className="App">
-              <header className="App-header">
-                <h1>nigg</h1>
-              </header>
+            <main className="container" style={{paddingTop: "1rem"}}>
+            <Header />
+            <div className="row">
+
+                
+            </div>
+
+            </main>    
+           
+                
+             
             </div>
           );
 
