@@ -3,8 +3,8 @@ import React from "react";
 function EmployeeCard(props) {
     return (
         <section className="col-9">
-            {props.results.map(result => (
-                <div className="card" style={{marginBottom: "1rem"}}>
+            {props.results.map((result, index) => (
+                <div key={index} className="card" style={{marginBottom: "1rem"}}>
                 <div className="card-body">
                   <h4 className="card-title">{result.name}</h4>                  
                   <p className="card-text"><strong>Minions Pay: </strong>{result.pay}</p>

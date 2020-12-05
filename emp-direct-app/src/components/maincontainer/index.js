@@ -6,9 +6,13 @@ import EmployeeCard from "./EmployeeCard"
 import Minion from "../../minions.json";
 
 class MainContainer extends Component {
-    state ={
-        results: []
-    };
+    constructor(){
+        super()
+        this.state ={
+            results: []
+        };
+      console.log("constuctor")  
+    }
     
    
     handleSingleMinion = event => {
@@ -22,8 +26,7 @@ class MainContainer extends Component {
         }
         this.setState({results: singleMinion})
     };    
-    handleViewAll = event => {
-        
+    handleViewAll = event => {        
         this.setState({results: Minion})
     };
     handleSortPay = event => {
@@ -47,14 +50,16 @@ class MainContainer extends Component {
         }
         this.setState({results: CoolGuy})
     };
-    componentDidMount() {
-        this.handleViewAll()
-    }
+    // componentDidMount() {
+    //     this.handleViewAll()
+    //     console.log("mount")
+    // }
 
    
     
     
     render(){
+        console.log("render")
         return (
             <div className="App">
             <main className="container-fluid" style={{paddingTop: "1rem"}}>
@@ -63,7 +68,7 @@ class MainContainer extends Component {
                 <NameCard>
                 <div className="card-header" style={{textAlign: "center"}}>Click for Info</div>
                 <div className="card-body" style={{textAlign: "center"}}>
-                {Minion.map(emp => ( <Name empName={emp.name} class="btn btn-secondary" handleSingleMinion={this.handleSingleMinion}/>))}
+                {Minion.map((emp, index) => ( <Name key={index} empName={emp.name} class="btn btn-secondary" handleSingleMinion={this.handleSingleMinion}/>))}
                 <Name empName="View All" class="btn btn-primary" handleSingleMinion={this.handleViewAll} />
                 <Name empName="Sort by Pay" class="btn btn-primary" handleSingleMinion={this.handleSortPay} />
                 <Name empName="View Coolest Guy" class="btn btn-primary" handleSingleMinion={this.handleCoolGuy}/>
