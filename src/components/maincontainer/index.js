@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Header from "./Header";
-import NameCard from "./namecard";
-import Name from "./name";
-import EmployeeCard from "./EmployeeCard"
+import Header from "../Header";
+import NameCard from "../namecard";
+import Name from "../name";
+import EmployeeCard from "../EmployeeCard"
 import Minion from "../../minions.json";
 
 class MainContainer extends Component {
